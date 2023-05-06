@@ -57,10 +57,23 @@ exports.getEditProduct = (req, res, next) => {
 }
 
 
-
 exports.getByCategory = (req, res, next) => {
     const gameCategory = req.params.gameCategory;
     Product.findByCategory(gameCategory).then((products) => {
+        res.status(200).json({
+            "message": "success",
+            "data": products[0]
+        });
+    }).catch((error) => {
+        res.status(500).json({
+            "message": error
+        });
+    });
+}
+
+exports.getByName = (req, res, next) => {
+    const gameName = req.params.gameName;
+    Product.searchGame(gameName).then((products) => {
         res.status(200).json({
             "message": "success",
             "data": products[0]

@@ -56,4 +56,12 @@ module.exports = class Product{
         );
     }
 
+    static searchGame(name) {
+        return db.execute(
+          'SELECT * FROM products WHERE gameName LIKE ?',
+          [`%${name}%`]
+        );
+      }
+      
+
 }

@@ -10,6 +10,8 @@ router.get('/edit-products/:gameNumber', productController.getEditProduct);
 
 router.get('/getBy-category/:gameCategory', productController.getByCategory);
 
+router.get('/getByName/:gameName', productController.getByName);
+
 router.post('/edit-products', productController.editProduct);
 
 router.get('/delete-products', productController.deleteProduct)
