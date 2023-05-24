@@ -1,9 +1,13 @@
 const express  = require('express');
-const db = require("./util/database");
+// const db = require("./util/database");
 const app = express();
+const cors = require('cors')
+
+
 
 const adminProductRoutes = require('./routes/products');
 
+app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -12,4 +16,4 @@ app.use((req, res, next) => {
     next();
 });
 app.use("/admin",adminProductRoutes);
-app.listen(8081);
+app.listen(process.env.PORT || 3000);
