@@ -13,8 +13,8 @@ module.exports = class Product{
         this.image_url5 = image_url5;
         this.gameSpec = gameSpec;
         this.gameDeveloper = gameDeveloper;
-        this.gamePrice = Double.parseDouble(gamePrice);
-        this.gameStock = int.Parse(gameStock);
+        this.gamePrice = gamePrice;
+        this.gameStock = gameStock;
         this.gameCategory = gameCategory;
     }
 
